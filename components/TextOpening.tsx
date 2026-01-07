@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
 import ShinyText from "./ShinyText";
+import LightRays from './LightRays';
 
 gsap.registerPlugin(SplitText);
 
@@ -81,26 +82,46 @@ export default function TextOpening({ onFinish }: TextOpeningProps) {
     }, [onFinish]);
 
     return (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-white">
-            <h1 ref={splitRef} className="text-5xl font-bold text-center">
-                HELLO
-            </h1>
+        <div className="fixed inset-0 z-50 bg-black overflow-hidden">
 
-            <p ref={blurRef} className="mt-6 text-xl text-center opacity-0">
-                welcome to my website
-            </p>
-
-            <div
-                ref={shinyWrapperRef}
-                className="mt-6 opacity-0 text-center max-w-lg"
-            >
-                <ShinyText
-                    text="Reminder, coba untuk bukanya pas free and after belajar aja yaa.. kalo semisal masih sibuk, close dulu aja.. GAPAPA!!"
-                    speed={5.0}
-                    color="#888"
-                    shineColor="#fff"
-                    className="text-2xl font-semibold text"
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                <LightRays
+                    raysOrigin="top-center"
+                    raysColor="#FFFF"
+                    raysSpeed={1.5}
+                    lightSpread={0.8}
+                    rayLength={1.2}
+                    followMouse={true}
+                    mouseInfluence={0.1}
+                    noiseAmount={0.1}
+                    distortion={0.05}
+                    className="w-full h-full"
                 />
+            </div>
+
+            <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
+
+                <h1 ref={splitRef} className="text-5xl font-bold text-center">
+                    HELLO
+                </h1>
+
+                <p ref={blurRef} className="text-xl text-center opacity-0">
+                    welcome to my website
+                </p>
+
+                <div
+                    ref={shinyWrapperRef}
+                    className="opacity-0 text-center max-w-lg"
+                >
+                    <ShinyText
+                        text="Hii"
+                        speed={5.0}
+                        color="#888"
+                        shineColor="#fff"
+                        className="text-2xl font-semibold"
+                    />
+                </div>
+
             </div>
         </div>
     );
