@@ -5,6 +5,7 @@ import gsap from "gsap";
 import SplitText from "gsap/SplitText";
 import ShinyText from "./ShinyText";
 import LightRays from './LightRays';
+import Aurora from './Aurora';
 
 gsap.registerPlugin(SplitText);
 
@@ -25,7 +26,6 @@ export default function TextOpening({ onFinish }: TextOpeningProps) {
 
         const tl = gsap.timeline({
             defaults: { ease: "power3.out" },
-            onComplete: onFinish,
         });
 
         // Split masuk
@@ -65,7 +65,6 @@ export default function TextOpening({ onFinish }: TextOpeningProps) {
             duration: 0.8,
         });
 
-        // ⏸ TAHAN REMINDER DI LAYAR (INI YANG PENTING)
         tl.to({}, { duration: 2.5 });
 
         // Shiny fade out
@@ -75,46 +74,59 @@ export default function TextOpening({ onFinish }: TextOpeningProps) {
             delay: 0.8,
         });
 
+        tl.to({}, { duration: 0.5 });
+
+        tl.to(containerRef.current, {
+            opacity: 0,
+            duration: 1,
+        });
+
+        tl.call(onFinish);
+
         return () => {
             split.revert();
             tl.kill();
         };
     }, [onFinish]);
 
+    const containerRef = useRef<HTMLDivElement>(null)
     return (
-        <div className="fixed inset-0 z-50 bg-black overflow-hidden">
+        <div className="fixed inset-0 z-50 bg-black overflow-hidden" ref={containerRef}>
 
             <div className="absolute inset-0 z-0 pointer-events-none">
-                <LightRays
-                    raysOrigin="top-center"
-                    raysColor="#FFFF"
-                    raysSpeed={1.5}
-                    lightSpread={0.8}
-                    rayLength={1.2}
-                    followMouse={true}
-                    mouseInfluence={0.1}
-                    noiseAmount={0.1}
-                    distortion={0.05}
-                    className="w-full h-full"
+                <Aurora
+                    colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
+                    blend={0.5}
+                    amplitude={1.0}
+                    speed={0.5}
                 />
             </div>
 
-            <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
+            <div className="relative z-10 h-full w-full font-sans text-white">
 
-                <h1 ref={splitRef} className="text-5xl font-bold text-center">
+                <h1
+                    ref={splitRef}
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+             text-5xl font-bold text-center"
+                >
                     HELLO
                 </h1>
 
-                <p ref={blurRef} className="text-xl text-center opacity-0">
-                    welcome to my website
+                <p
+                    ref={blurRef}
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2
+             text-xl text-center opacity-0"
+                >
+                    WELCOME TO MY WEBSITE
                 </p>
 
                 <div
                     ref={shinyWrapperRef}
-                    className="opacity-0 text-center max-w-lg"
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2
+             opacity-0 text-center max-w-lg"
                 >
                     <ShinyText
-                        text="Hii"
+                        text="Reminder!"
                         speed={5.0}
                         color="#888"
                         shineColor="#fff"
