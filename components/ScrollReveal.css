@@ -1,0 +1,25 @@
+/* app/globals.css atau di style terpisah */
+.scroll-reveal {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.scroll-reveal-text {
+  display: inline;
+  white-space: normal;
+}
+
+.word {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 0.25em;
+  will-change: opacity, filter, transform;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  transition: opacity 0.3s ease-out;
+}
