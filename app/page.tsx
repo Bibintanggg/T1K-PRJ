@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import IntroOpening from "@/components/TextOpening";
-import Home from "./home/page";
+import Home from "../components/Home";
 
 export default function Page() {
   const [introDone, setIntroDone] = useState(false);

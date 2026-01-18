@@ -86,7 +86,7 @@ export default function Dock({
   dockHeight = 256,
   baseItemSize = 50
 }) {
-  const mouseX = useMotionValue(Infinity);
+  const mouseX = useMotionValue(0);
   const isHovered = useMotionValue(0);
 
   const maxHeight = useMemo(
