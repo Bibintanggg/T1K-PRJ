@@ -28,7 +28,7 @@ export default function Home() {
         {
             label: "Games",
             ariaLabel: "View our journey timeline",
-            link: "#journey",
+            link: "/games",
             onClick: () => {
                 const section = document.querySelector('section:nth-of-type(4)');
                 section?.scrollIntoView({ behavior: 'smooth' });
@@ -263,7 +263,7 @@ export default function Home() {
                                 blurStrength={8}
                                 textClassName="text-white text-xl md:text-2xl"
                             >
-                                Sebelumnya gue gabisa bilang ini ke lu, but.. maybe this is the good time buat bilang
+                                Sebelumnya gue gabisa bilang ini ke lu, but.. maybe this is the good time buat bilang ini, karena dikit lagi kita lulus, gue gamau buang buang waktu sihh wkakwakw
                             </ScrollReveal>
                         </div>
 
@@ -401,11 +401,17 @@ export default function Home() {
                         id="memories"
                         className="h-screen w-full flex items-center justify-center flex-col gap-8 relative overflow-hidden"
                     >
+
+                        <p className="text-white text-center">
+                                Btw ada gamesnya juga tauu.. gamau nyobain kahh?? hehehehe, kalo mau nyobain klik menu aja yhh
+                        </p>
+
                         <div className="text-center space-y-4 z-20">
                             <p className="text-gray-500 text-sm mt-8">
                                 #bintangtampilbeda #bintangkeren
                             </p>
                         </div>
+                        
 
                         {/* Decorative elements */}
                         <div className="flex gap-4 mt-12 z-20">
