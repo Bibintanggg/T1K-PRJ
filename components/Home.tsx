@@ -20,7 +20,7 @@ export default function Home() {
         {
             label: "Home",
             ariaLabel: "Go to home",
-            link: "#home",
+            link: "/",
             onClick: () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
@@ -52,7 +52,6 @@ export default function Home() {
     return (
         <div className="relative min-h-screen overflow-hidden">
 
-            {/* ===== DARKVEIL BACKGROUND ===== */}
             <div className="fixed inset-0 -z-20">
                 <DarkVeil
                     hueShift={67}
@@ -163,11 +162,11 @@ export default function Home() {
                             className="absolute right-10 md:right-20 top-1/4 -z-10"
                         >
                             <img
-                                src="/images/tulip.png"
+                                src="/images/flower-pink.png"
                                 alt="Sunflower"
                                 className="w-72 h-72 md:w-96 md:h-96 object-cover rounded-full opacity-50"
                                 style={{
-                                    filter: "drop-shadow(0 0 100px rgba(251, 191, 36, 0.7))",
+                                    filter: "drop-shadow(0 0 100px rgb(253, 172, 172)",
                                 }}
                             />
                         </Flower3DScroll>
@@ -201,7 +200,7 @@ export default function Home() {
                             className="absolute left-10 top-1/3 -z-10"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=1200&q=90"
+                                src="/images/rose-floral.png"
                                 alt="Lavender"
                                 className="w-80 h-80 md:w-96 md:h-96 object-cover rounded-full opacity-55"
                                 style={{
@@ -285,7 +284,7 @@ export default function Home() {
                             className="absolute left-1/4 top-1/4 -z-10"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1496062031456-07b8f162a322?w=1200&q=90"
+                                src="/images/tulip.png"
                                 alt="Red rose"
                                 className="w-56 h-56 md:w-72 md:h-72 object-cover rounded-full opacity-50"
                                 style={{
@@ -310,7 +309,7 @@ export default function Home() {
                             className="absolute right-1/4 top-1/4 -z-10"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&q=90"
+                                src="/images/tulip.png"
                                 alt="Cherry blossom"
                                 className="w-56 h-56 md:w-72 md:h-72 object-cover rounded-full opacity-50"
                                 style={{
@@ -327,7 +326,7 @@ export default function Home() {
                         "DAN SEBENERNYA LU JUGA UDAH TAU KAN YAA?? *gatau sihh kata orang orang sih gitu yaa hahaha",
                         "Even lu udah tau, gue masih mau bilang ini dengan cara dan style gue sendiri yang keren ini",
                         "And after this... after lu baca ini, gue harap kita masih bisa berteman baik yaa, dan anggep aja ini cuma candaan dan anggep aja ini gapernah kejadian/dibuat sebelumnya✌️",
-                        "Mungkin gini aja sih... thanks ya sirr!",
+                        "Mungkin gini aja sih... thanks ya sirr! thanks udah jadi motivasi belajar pk pm gue *lebay",
                     ].map((text, i) => (
                         <section
                             id={i === 0 ? "message" : undefined}
@@ -361,7 +360,7 @@ export default function Home() {
                                     className="absolute left-5 md:left-10 top-1/2 -z-10"
                                 >
                                     <img
-                                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80"
+                                        src="/images/blue-floral.png"
                                         alt="White daisy"
                                         className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full opacity-50"
                                         style={{
@@ -385,7 +384,7 @@ export default function Home() {
                                     className="absolute right-5 md:right-10 top-1/2 -z-10"
                                 >
                                     <img
-                                        src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80"
+                                        src="/images/flower-pink.png"
                                         alt="Pink flower"
                                         className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full opacity-50"
                                         style={{
@@ -435,32 +434,6 @@ export default function Home() {
                             perspective={1800}
                             className="absolute -z-10"
                         >
-                            <div className="flex gap-8 md:gap-12">
-                                <img
-                                    src="https://images.unsplash.com/photo-1496062031456-07b8f162a322?w=800&q=80"
-                                    alt="Red rose"
-                                    className="w-40 h-40 md:w-56 md:h-56 object-cover rounded-full opacity-60"
-                                    style={{
-                                        filter: "drop-shadow(0 0 80px rgba(239, 68, 68, 0.7))",
-                                    }}
-                                />
-                                <img
-                                    src="https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?w=800&q=80"
-                                    alt="Sunflower"
-                                    className="w-40 h-40 md:w-56 md:h-56 object-cover rounded-full opacity-60"
-                                    style={{
-                                        filter: "drop-shadow(0 0 80px rgba(251, 191, 36, 0.7))",
-                                    }}
-                                />
-                                <img
-                                    src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80"
-                                    alt="Cherry blossom"
-                                    className="w-40 h-40 md:w-56 md:h-56 object-cover rounded-full opacity-60"
-                                    style={{
-                                        filter: "drop-shadow(0 0 80px rgba(244, 114, 182, 0.7))",
-                                    }}
-                                />
-                            </div>
                         </Flower3DScroll>
                     </section>
 
