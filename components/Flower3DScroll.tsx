@@ -10,7 +10,7 @@ if (typeof window !== "undefined") {
 
 interface Flower3DScrollProps {
     children: React.ReactNode;
-    containerRef?: React.RefObject<HTMLElement>;
+    containerRef?: React.RefObject<HTMLElement | null>;
     // 3D Transform properties
     rotateX?: [number, number];      // Rotate sumbu X (atas-bawah)
     rotateY?: [number, number];      // Rotate sumbu Y (kiri-kanan)

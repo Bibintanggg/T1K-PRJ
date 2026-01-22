@@ -31,6 +31,7 @@ type Flower = {
   color: string
 }
 
+
 const AVAILABLE_FLOWERS: Flower[] = [
   { id: '1', name: 'Rose', emoji: '🌹', color: '#ff6b9d' },
   { id: '2', name: 'Sunflower', emoji: '🌻', color: '#ffd93d' },
@@ -151,7 +152,7 @@ export default function FlowerGame() {
     })
   )
 
-  const menuItems = [
+  const menuItems: Array<{ label: string; ariaLabel: string; link: string; onClick: () => void }> = [
     {
       label: "Home",
       ariaLabel: "Go to home",

@@ -142,7 +142,7 @@ export default function Home() {
                             blurStrength={8}
                             textClassName="text-white text-2xl md:text-3xl text-center z-20"
                         >
-                            Helloo, sir!!
+                            Helloo, tikk!!
                         </ScrollReveal>
 
                         {/* 3D SUNFLOWER - Flip and rotate */}
@@ -243,7 +243,7 @@ export default function Home() {
                                     />
                                     <p className="text-white text-4xl md:text-6xl font-bold">Days</p>
                                 </div>
-                                <p className="text-white/60 text-sm">Since {START_DATE}</p>
+                                <p className="text-white/60 text-sm">*Live days</p>
                             </motion.div>
 
                             <ScrollReveal
@@ -321,12 +321,12 @@ export default function Home() {
 
                     {/* MESSAGE SECTIONS */}
                     {[
-                        "So, yeah, gue suka sama lu, sir..",
+                        "So, yeah, gue suka sama lu, tikk..",
                         "Sorry kalo kesannya tiba-tiba banget...",
                         "DAN SEBENERNYA LU JUGA UDAH TAU KAN YAA?? *gatau sihh kata orang orang sih gitu yaa hahaha",
                         "Even lu udah tau, gue masih mau bilang ini dengan cara dan style gue sendiri yang keren ini",
                         "And after this... after lu baca ini, gue harap kita masih bisa berteman baik yaa, dan anggep aja ini cuma candaan dan anggep aja ini gapernah kejadian/dibuat sebelumnya✌️",
-                        "Mungkin gini aja sih... thanks ya sirr! thanks udah jadi motivasi belajar pk pm gue *lebay",
+                        "Mungkin gini aja sih... thanks ya tikk! thanks udah jadi motivasi belajar pk pm gue *lebay",
                     ].map((text, i) => (
                         <section
                             id={i === 0 ? "message" : undefined}
@@ -423,24 +423,6 @@ export default function Home() {
                                 />
                             ))}
                         </div>
-
-                        {/* 3D FINAL BOUQUET */}
-                        <Flower3DScroll
-                            containerRef={scrollContainerRef}
-                            rotateY={[0, 360]}
-                            rotateX={[-30, 30]}
-                            rotateZ={[0, 180]}
-                            translateZ={[-250, 250]}
-                            opacity={[0.2, 0.9]}
-                            scale={[0.3, 1.5]}
-                            start="top bottom"
-                            end="center center"
-                            scrub={2}
-                            blur={true}
-                            perspective={1800}
-                            className="absolute -z-10"
-                        >
-                        </Flower3DScroll>
                     </section>
 
                 </div>

@@ -1,12 +1,24 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+// import { Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
+const plusJakarta = localFont({
+  src: [
+    {
+      path: "../public/fonts/plus-jakarta/PlusJakartaSans-VariableFont_wght.woff2",
+      weight: "200 800",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/plus-jakarta/PlusJakartaSans-Italic-VariableFont_wght.woff2",
+      weight: "200 800",
+      style: "italic",
+    },
+  ],
   variable: "--font-plus-jakarta",
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
-})
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
